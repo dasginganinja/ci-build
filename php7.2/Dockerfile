@@ -2,11 +2,7 @@
 FROM node:10 as nodejs
 FROM devwithlando/php:7.2-apache-2
 
-RUN apt-get update \
-  && apt-get install -y --no-install-recommends \
-    build-essential \
-  && rm -rf /var/lib/apt/lists/*
-COPY --from=nodejs /usr/local/bin/node /usr/local/bin/node
-COPY --from=nodejs /usr/local/bin/npm /usr/local/bin/npm
+RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - \
+    && apt-get install -y nodejs build-essential
 RUN npm install gulpjs/gulp-cli -g
 RUN echo "unsafe-perm = true" >> ~/.npmrc
