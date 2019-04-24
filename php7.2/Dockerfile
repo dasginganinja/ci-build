@@ -2,7 +2,7 @@
 
 FROM devwithlando/php:7.2-apache-2
 
-RUN apt-get update 
+RUN apt-get update \
   && apt-get install -y \
     build-essential
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
