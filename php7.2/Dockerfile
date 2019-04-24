@@ -6,3 +6,5 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && apt-get install -y nodejs build-essential
 RUN npm install gulpjs/gulp-cli -g
 RUN echo "unsafe-perm = true" >> ~/.npmrc
+
+RUN rm -r /var/lib/apt/lists/*
