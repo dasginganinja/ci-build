@@ -2,7 +2,7 @@
 FROM devwithlando/php:7.2-apache-2
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
-    && apt-get install -y nodejs build-essential vim && rm -r /var/lib/apt/lists/*
+    && apt-get install -y nodejs build-essential vim nano emacs && rm -r /var/lib/apt/lists/*
 # without this, the global install was failing
 RUN npm config set user root
 # this is to hide warnings about running as root
