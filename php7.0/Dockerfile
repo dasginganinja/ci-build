@@ -1,8 +1,8 @@
 # Basic Apache / PHP 7.0 Appserver for lando
 FROM devwithlando/php:7.0-apache-2
 
-RUN apt-get update && apt-get install -y emacs-nox && curl -sL https://deb.nodesource.com/setup_10.x | bash - \
-    && apt-get install -y nodejs build-essential vim nano emacs && rm -r /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y build-essential vim nano emacs-nox automake && curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+    && apt-get install -y nodejs && rm -r /var/lib/apt/lists/*
 # without this, the global install was failing
 RUN npm config set user root
 # this is to hide warnings about running as root
