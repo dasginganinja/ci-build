@@ -37,3 +37,8 @@ Note: You may need to `docker login` and enter your Docker Hub credentials. :)
 # Issues when building
 
 If you run into issues when building, set `buildkit` to `false` in the Docker config. You can edit this from within the Docker Settings panel. Restart afterwards and you can build as you normally would.
+
+# Target Platform :)
+In your `~/.zshrc` add the following entry
+
+```export DOCKER_DEFAULT_PLATFORM=linux/amd64```
